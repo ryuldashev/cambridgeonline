@@ -9,41 +9,76 @@
 		<title>CAMBRIDGE ONLINE</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" href="favicon.ico" />
+
 	</head>
 	<style>
-		body {
-			background: #f1cd56 url("images/bg.jpg") no-repeat;
-			background-size: 80% auto;
-			background-position: 50% -20px;
+		html, body {
+	    	margin: 0;
+	    	padding: 0;
+			min-width: 800px;
+		}
+	    body {
+			background: #f0c356 url("images/bg.jpg") no-repeat;
+			background-size: 100% auto;
+			background-position: 50% 0px;
+	    }
+		.main-area {
 		}
 
 		.login {
-			background: url('images/logo.png');
-			background-size: 100%;
-			width: 300px;
-			height: 423px;
-			margin: -60px auto 0;
-			border-radius: 14px;
+			width: 17%;
+			margin: 0 auto 0;
 		}
 		.login-inner {
-			padding: 300px 15px;
 			font-family: "Trebuchet MS";
 			text-align: center;
+			padding: 10rem 15px 0;
+			text-align: center;
+		}
+
+		.login-inner input {
+			display: block;
+			padding: 0;
+			margin: 0 0 0.2rem 0;
+			width: 90%;
+			height: 1rem;
+		}
+
+		.temp {
+			position: fixed;
+			left: 15%;
+			bottom: 3rem;
+			width: 70%;
+			background: #fff;
+			border-radius: 30px;
+			padding: 10px;
+			text-align: center;
+			font-family: "Trebuchet MS";
+			margin: 0 auto;
+			box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
 		}
 
 	</style>
 	<body>
-		<div>
+		<div class="main-area">
 			<div class="login">
 				<div class="login-inner">
-					<form action=""></form>
+					<form action="GET" url="https://cambridgegroup.uz/login?auth=1">
+						<input type="text" name="phone" />
+						<input type="password" name="pass" />
+						<input type="button" name="login" value="Login" />
+					</form>
 
 
-					<p>Платформа доступна временно только для учеников Cambridge LC.</p>
-
-					+99871 2001115
 				</div>
 
+			</div>
+
+
+			<div class="temp">
+				Платформа временно доступна только для учеников Cambridge LC. <br>
+				<strong>+99871 2001115</strong>
 			</div>
 		</div>
 	</body>
