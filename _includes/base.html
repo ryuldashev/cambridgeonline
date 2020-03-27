@@ -91,7 +91,7 @@
 			margin-top: 1em;
 			font-size: 0.6em;
 			line-height: 0.4em;
-			text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+			text-shadow: 0px 0px 5px rgba(255,255,255,0.7);
 		}
 
 		.temp {
@@ -538,9 +538,11 @@
 
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		{% if page.agreement %}
+		
 		<script type="text/javascript">
-			$('#staticBackdrop').modal('show');
+			{% if page.agreement %}
+				$('#staticBackdrop').modal('show');
+			{% endif %}
 			$('#staticBackdrop .modal-body').scroll(function(e) {
 			       var endScroll = $('#staticBackdrop .modal-body-inner').height();
 			       var currScroll = $('#staticBackdrop .modal-body').scrollTop() + $('#staticBackdrop .modal-body').height() + 30;
@@ -548,9 +550,9 @@
 				   		$('#acceptAgreement').removeAttr('disabled');
 				   		$('#acceptAgreementHint').hide();
 				   }
+				   console.log(endScroll, currScroll);
 			});
 		</script>
-		{% endif %}
 	</body>
 
 </html>
