@@ -528,7 +528,12 @@
 		<script type="text/javascript">
 			$('#staticBackdrop').modal('show');
 			var endScroll = $('#staticBackdrop .modal-body').height() + $('#staticBackdrop .modal-body-inner').height() - 50;
-			$('#staticBackdrop .modal-body').scroll(function() {
+			$('#staticBackdrop .modal-body').scroll(function(e) {
+					console.log(
+endScroll,
+$('#staticBackdrop .modal-body').scrollTop(),
+e
+						);
 				   if ($('#staticBackdrop .modal-body').scrollTop() > endScroll) {
 				   		$('#acceptAgreement').removeAttr('disabled');
 				   		$('#acceptAgreementHint').hide();
