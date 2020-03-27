@@ -239,7 +239,7 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		        
+		        <div class="modal-body-inner">
 
 		      		<p><strong>ПУБЛИЧНАЯ ОФЕРТА НА ПРЕДОСТАВЛЕНИЕ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ ПО АНГЛИЙСКОМУ ЯЗЫКУ</strong></p>
 <p><strong>Термины и определения.</strong></p>
@@ -512,10 +512,11 @@
 <p><strong>Поведение во время занятий: </strong></p>
 <p><strong>-</strong>Посещение Заказчиком/Учеником занятия в состоянии алкогольного, наркотического или токсического опьянения запрещается.</p>
 <p>- Ученику/Заказчику запрещается отвлекаться и отвлекать других учащихся в течении занятий.</p>
+				</div>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-		        <button type="button" class="btn btn-primary">Принимаю</button>
+		        <button type="button" class="btn btn-primary" disabled="disabled">Принимаю</button>
 		      </div>
 		    </div>
 		  </div>
@@ -526,6 +527,13 @@
 		{% if page.agreement %}
 		<script type="text/javascript">
 			$('#staticBackdrop').modal('show');
+			$('#staticBackdrop .modal-body').scroll(function() {
+				   console.log(
+				   		$('#staticBackdrop .modal-body').scrollTop(),
+				   		$('#staticBackdrop .modal-body-inner').height()
+
+				   	);
+			});
 		</script>
 		{% endif %}
 	</body>
