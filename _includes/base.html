@@ -516,7 +516,7 @@
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-		        <button type="button" class="btn btn-primary" disabled="disabled">Принимаю</button>
+		        <button type="button" class="btn btn-primary" id="acceptAgreement" disabled="disabled">Принимаю</button>
 		      </div>
 		    </div>
 		  </div>
@@ -527,12 +527,11 @@
 		{% if page.agreement %}
 		<script type="text/javascript">
 			$('#staticBackdrop').modal('show');
+			var endScroll = $('#staticBackdrop .modal-body').height() + $('#staticBackdrop .modal-body-inner').height() - 50;
 			$('#staticBackdrop .modal-body').scroll(function() {
-				   console.log(
-				   		$('#staticBackdrop .modal-body').scrollTop(),
-				   		$('#staticBackdrop .modal-body-inner').height()
-
-				   	);
+				   if (('#staticBackdrop .modal-body').scrollTop() > endScroll) {
+				   		$('#acceptAgreement').removeAttr('disabled');
+				   }
 			});
 		</script>
 		{% endif %}
