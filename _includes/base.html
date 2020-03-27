@@ -516,7 +516,7 @@
 		      </div>
 		      <div class="modal-footer">
 		        <span id="acceptAgreementHint">Прочитайте до конца, чтобы принять оферту</span>
-		        <button type="button" class="btn btn-primary" id="acceptAgreement" disabled="disabled">Принимаю</button>
+		        <button type="button" data-dismiss="modal" class="btn btn-primary" id="acceptAgreement" disabled="disabled">Принимаю</button>
 		      </div>
 		    </div>
 		  </div>
@@ -534,7 +534,6 @@
 				   		$('#acceptAgreement').removeAttr('disabled');
 				   		$('#acceptAgreementHint').hide();
 				   }
-				   console.log(endScroll, $('#staticBackdrop .modal-body').scrollTop())
 			});
 		</script>
 		{% endif %}
