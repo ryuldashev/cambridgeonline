@@ -528,11 +528,13 @@
 		<script type="text/javascript">
 			$('#staticBackdrop').modal('show');
 			$('#staticBackdrop .modal-body').scroll(function(e) {
-			       var endScroll = $('#staticBackdrop .modal-body').height() + $('#staticBackdrop .modal-body-inner').height() - 50;
-				   if ($('#staticBackdrop .modal-body').scrollTop() > endScroll) {
+			       var endScroll = $('#staticBackdrop .modal-body-inner').height();
+			       var currScroll = $('#staticBackdrop .modal-body').scrollTop() + $('#staticBackdrop .modal-body').height() + 30;
+				   if (currScroll > endScroll) {
 				   		$('#acceptAgreement').removeAttr('disabled');
 				   		$('#acceptAgreementHint').hide();
 				   }
+				   console.log(endScroll, $('#staticBackdrop .modal-body').scrollTop())
 			});
 		</script>
 		{% endif %}
